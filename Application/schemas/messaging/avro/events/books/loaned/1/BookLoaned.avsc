@@ -1,0 +1,38 @@
+{
+  "name": "BookLoaned",
+  "namespace": "schemas.messaging.avro.events.books.loaned",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": {
+        "type": "string",
+        "logicalType": "UUID"
+      }
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "author",
+      "type": "string"
+    },
+    {
+      "name": "link",
+      "type": "string"
+    },
+    {
+      "name": "subject",
+      "type": "string"
+    },
+    {
+      "name": "isLoaned",
+      "type": [
+        "boolean"
+      ],
+      "default": false
+    }
+  ]
+}
+

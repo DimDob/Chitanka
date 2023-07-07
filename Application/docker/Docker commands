@@ -1,0 +1,16 @@
+1. If someone can't run docker environment run this in the terminal:
+sudo ln -s $HOME/.docker/run/docker.sock /var/run/docker.sock
+
+2. If someone can't run docker because of password issues place this on lines 29-30:
+POSTGRES_HOST_AUTH_METHOD: "trust"
+this will authenticate everyone, do not push to main
+
+3.  Images & containers management:
+docker image rm -f $(docker image ls -aq)   -remove all images
+docker container rm -f $(docker container ls -aq) - remove all containers
+
+
+4. Microservice "Engine" fails to run because  Error 42P01: "relation X does not exist" or relative:
+The solution is to delete the postgresql_vol folder & reload docker containers
+
+5. If a container of a microservice doesn't boot up then go to docker CLi and run it manually

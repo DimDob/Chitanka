@@ -1,0 +1,28 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .request-button,
+  .return-button,
+  .add-button,
+  .returnAll-button {
+    margin: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button[color="warn"] {
+    background-color: #ff5252;
+    color: #ffffff;
+  }
+  
+  button[color="warn"]:hover {
+    background-color: #e04444;
+  }
+  

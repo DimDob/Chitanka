@@ -1,0 +1,29 @@
+
+<header>
+  <h1>Welcome to Chitanka Online Library</h1>
+</header>
+<nav>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/books">Books</a></li>
+    <li><a routerLink="/authors">Authors</a></li>
+  </ul>
+</nav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<section>
+  <h2>Discover Your Next Favorite Book!</h2>
+  <p>Welcome to Chitanka, your online library with a vast collection of books and authors.</p>
+  
+  <!-- Adding component html to the app.component.html through the selector in the component -->
+
+  <book-operations-modal></book-operations-modal> 
+  <app-delete-book></app-delete-book>
+  <app-find-book></app-find-book>
+  <table-basic-example></table-basic-example>
+  <mat-divider></mat-divider>
+</section>
+
+
+

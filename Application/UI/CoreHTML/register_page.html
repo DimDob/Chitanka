@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>User Registration and Login Form</title>
+	<link rel="stylesheet" type="text/css" href="css/input_register_forms.css">
+
+</head>
+<body>
+	<h2>User Registration Form</h2>
+	<form>
+		<label for="reg-username">Username:</label>
+		<input type="text" id="reg-username" name="reg-username" placeholder="Please enter your username" style="width: 225px; height: 20px;" required><br><br>
+
+		<label for="reg-password">Password:</label>
+		<input type="password" id="reg-password" name="reg-password" placeholder="Please enter your password" style="width: 225px; height: 20px;" required><br><br>
+		
+		<input type="button" value="Register" id="REGISTER" onclick="navigate(event)">
+
+		<button id="goBack" onclick="navigate(event)">Go Back</button>
+
+		<script src="js/loginAndRegisterPages.js"></script>
+		<script src="js/userLogo.js"></script>
+	</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div mat-dialog-content>
+  <p>Which book would you like to find? </p>
+  <mat-form-field>
+    <mat-label id="enterTitle">Enter the book title here</mat-label>
+    <input matInput [(ngModel)]="data.bookTitle">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.bookTitle" cdkFocusInitial id="okButton" (click)="onClickOKButton()">Ok</button>
+</div>
+
+

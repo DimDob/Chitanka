@@ -1,0 +1,41 @@
+version: '3.5'
+
+services:
+  chitanka-engine:
+    container_name: ChitankaEngine
+    image: chitanka_engine
+    build:
+      context: /Users/ddobrev/Desktop/myGitHub/Readify/Readify/Chitanka/Chitanka/Application/Engine
+      dockerfile: /Users/ddobrev/Desktop/myGitHub/Readify/Readify/Chitanka/Chitanka/Application/Engine/Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://postgres:5432/chitanka
+  postgres:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./ChitankaDB/var/lib/postgresql/data:/var/lib/postgresql/data
+      - ./initDB.sql:/docker-entrypoint-initdb.d/initDB.sql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d postgres -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 1234
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      interval: 10s
+      timeout: 5s
+      retries: 10

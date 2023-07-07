@@ -1,0 +1,14 @@
+UP TO DATE IF FEATURE BRANCH IS AHEAD
+- git checkout feature branch
+- git pull —rebase origin feature (myBranch as an example)/…
+- git status
+- git reset —hard HEAD~(number for the commit you want to reset)
+-git checkout -b “new branch” (create a branch from feature branch)
+-git cherry-pick (hash of commit) to make your last commit HEAD^0
+
+/OR/
+
+1. Run those commands:
+- git checkout myBranch
+- git checkout -b newBranch
+- git pull --rebase origin myBranch

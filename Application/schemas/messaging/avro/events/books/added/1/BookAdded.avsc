@@ -1,0 +1,31 @@
+{
+  "name": "BookAdded",
+  "namespace": "schemas.messaging.avro.events.books.added",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": {
+        "type": "string",
+        "logicalType": "UUID"
+      }
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "author",
+      "type": "string"
+    },
+    {
+      "name": "link",
+      "type": "string"
+    },
+    {
+      "name": "subject",
+      "type": "string"
+    }
+  ]
+}
+

@@ -1,0 +1,112 @@
+/* app.component.css */
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  /* home.component.css */
+  
+  section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* books.component.css */
+  
+  .book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .book-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .book-card img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .book-card h3 {
+    margin-bottom: 5px;
+  }
+  
+  .book-card p {
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .book-card button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* authors.component.css */
+  
+  .author-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .author-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .author-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .author-card h3 {
+    margin-bottom: 5px;
+  }
+  
+  .author-card p {
+    color: #777;
+    margin-bottom: 15px;
+  }
+  

@@ -1,0 +1,99 @@
+div[mat-dialog-content] {
+  padding: 16px;
+}
+
+div[mat-dialog-content] p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+
+mat-form-field input {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  background-color: #f7f7f7;
+  transition: border-color 0.3s ease-in-out;
+}
+
+mat-form-field input:focus {
+  outline: none;
+  border-color: #337ab7;
+  background-color: #fff;
+}
+
+div[mat-dialog-actions] {
+  display: flex;
+  justify-content: flex-start; 
+  padding: 16px;
+}
+
+div[mat-dialog-actions] button {
+  margin-left: 8px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+div[mat-dialog-actions] button:hover {
+  background-color: #286090;
+}
+
+div[mat-dialog-actions] button:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+
+div[mat-dialog-content] {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  max-width: 300px; 
+  max-height: 400px; 
+}
+
+div[mat-dialog-content] p {
+  color: #333;
+}
+
+mat-label {
+  font-size: 15px;
+  text-transform: initial;
+  color: black;
+}
+
+mat-form-field ::ng-deep .mat-input-placeholder {
+  color: #aaa;
+}
+
+div[mat-dialog-actions] {
+  background-color: #f7f7f7;
+  border-top: 1px solid #ccc;
+}
+
+div[mat-dialog-actions] button {
+  background-color:hsl(208, 57%, 36%);
+  color: #ffffff;
+}
+
+div[mat-dialog-actions] button:nth-child(1) {
+  background-color: #bbb;
+  color: #fbfbfb;
+}
+
+div[mat-dialog-actions] button:hover {
+  background-color:hsl(208, 57%, 36%);
+  color: #ffffff;
+}
