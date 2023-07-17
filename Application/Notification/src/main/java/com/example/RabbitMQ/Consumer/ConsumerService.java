@@ -2,6 +2,7 @@ package com.example.RabbitMQ.Consumer;
 
 import com.example.Deserializer.Deserializer;
 import com.example.Service.NotificationService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.avro.specific.SpecificRecord;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -60,15 +61,14 @@ public class ConsumerService {
 
                 BookLoaned deserializedMessage = deserializer.deserializeBookModified(event);
 
-//                String greetMessage = notificationService.sendGreeting(event).get();
+                String greetMessage = notificationService.sendGreeting(event).get();
 
-                /// String assignee = String.valueOf(deserializedMessage.get("assignee"));
-                //TODO Add assignee column using java migration & when the user adds an email send to him that he has
-                //loaned a book.
-                String author = String.valueOf(deserializedMessage.get("author"));
-                String content = EmailTemplate.BOOK_LOANED.getTemplate() + author;
+                 String library_member_email = String.valueOf(deserializedMessage.get("patron_email"));
 
-//                emailSender.sendMail(assignee, greetMessage,  content);
+
+                String content = EmailTemplate.BOOK_LOANED.getTemplate() + GenerateContentMessages.bookLoanedContentMessage(deserializedMessage);
+
+                emailSender.sendMail(library_member_email, greetMessage,  content);
 
             }
             case "BookDeleted" -> {

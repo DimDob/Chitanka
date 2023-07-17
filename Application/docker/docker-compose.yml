@@ -5,8 +5,8 @@ services:
     container_name: ChitankaEngine
     image: chitanka_engine
     build:
-      context: /Users/ddobrev/Desktop/myGitHub/Readify/Readify/Chitanka/Chitanka/Application/Engine
-      dockerfile: /Users/ddobrev/Desktop/myGitHub/Readify/Readify/Chitanka/Chitanka/Application/Engine/Dockerfile
+      context: C:\Users\35988\IdeaProjects\Chitanka\Application\Engine
+      dockerfile: C:\Users\35988\IdeaProjects\Chitanka\Application\Engine\Dockerfile
     ports:
       - "8082:8082"
     depends_on:

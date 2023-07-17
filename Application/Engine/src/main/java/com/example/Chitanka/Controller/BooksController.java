@@ -53,7 +53,7 @@ public class BooksController {
     }
 
     @PutMapping(value = "books/{bookId}/loan")
-    public boolean loanBook(@PathVariable UUID bookId) {
+    public Book loanBook(@PathVariable UUID bookId) {
         return bookService.loan(bookId);
     }
 

@@ -32,6 +32,10 @@
         "boolean"
       ],
       "default": false
+    },
+    {
+      "name": "patron_email",
+      "type": "string"
     }
   ]
 }

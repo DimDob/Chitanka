@@ -20,5 +20,5 @@ public interface BookService {
 
     boolean isLoaned(UUID bookId);
 
-    boolean loan(UUID bookId);
+    Book loan(UUID bookId);
 }

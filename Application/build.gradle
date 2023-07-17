@@ -58,13 +58,8 @@ dependencies {
 tasks.register("generateAvro", GenerateAvroJavaTask) {
 	source("schemas/messaging/avro")
 	outputDir = file("Engine/build/generated-main-avro-java/")
+	outputDir = file("Notification/build/generated-main-avro-java/")
 
-	doLast {
-		copy {
-			from(outputDir)
-			into(file("Notification/build/generated-main-avro-java/"))
-		}
-	}
 }
 
 

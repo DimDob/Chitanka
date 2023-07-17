@@ -10,7 +10,7 @@ import { DialogOverviewExampleDialog } from './dialog/dialog.component';
 })
 export class BookOperationsModalComponent {
   bookTitle?: string;
-  dialogRef: any; 
+  dialogRef: any;
   afterOkClickShown: any;
 
   constructor(public dialog: MatDialog) { }
@@ -33,18 +33,18 @@ export class BookOperationsModalComponent {
 
   onClickOKButton(): void {
     this.afterOkClickShown = true;
-    
+
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      data: { bookTitle: '' }, 
-      
+      data: { bookTitle: '' },
+
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
       this.afterOkClickShown = true;
 
-    });    
-}
+    });
+  }
   onCloseSecondDialog(): void {
     this.afterOkClickShown = false;
   }
@@ -56,6 +56,6 @@ export class BookOperationsModalComponent {
 
   //TODO after a user's repository is created the request modal should request a book from DB and add it to user's repo.
 
- 
+
 
 }
