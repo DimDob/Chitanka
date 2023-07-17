@@ -58,10 +58,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public boolean loan(UUID bookId) {
+    public Book loan(UUID bookId) {
         Book book = find(bookId);
         booksEventPublisher.publishBookLoaned(book);
-        return sqlMigrationService.loanBookById(bookId);
+        sqlMigrationService.loanBookById(bookId);
+        return book;
     }
 
 

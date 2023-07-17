@@ -36,6 +36,7 @@ public class BooksEventPublisher {
                 .setLink(book.getLink())
                 .setSubject(book.getSubject())
                 .setTitle(book.getTitle())
+                .setPatronEmail("dimitardobrev.business@gmail.com") //TODO will be taken from input form
                 .build();
         publisherService.publish(bookLoaned);
     }

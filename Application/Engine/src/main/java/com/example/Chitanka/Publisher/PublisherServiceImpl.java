@@ -1,7 +1,6 @@
 package com.example.Chitanka.Publisher;
 
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.avro.specific.SpecificRecord;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

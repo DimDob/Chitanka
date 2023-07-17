@@ -12,6 +12,7 @@ export interface DialogData {
 }
 
 export interface Book {
+  id: string
   title: string;
   author: any;
   link: string;
@@ -31,7 +32,7 @@ export class DialogOverviewExampleDialog {
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private http: HttpClient
-  ) {}
+  ) { }
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -42,9 +43,10 @@ export class DialogOverviewExampleDialog {
       this.data.bookTitle = this.data.bookTitle.replace(/"/g, '')
       const bookFound = await this.searchForTheBookInTheDatabase(this.data.bookTitle);
       if (bookFound) {
+        this.publishBookFoundMessage(bookFound)
         this.sweetAlert("Great! You have requested the online book: " + this.data.bookTitle + ", written by " + bookFound.author.name + ". \n\nIt will be sent to your email address right away!");
         this.afterOkClickShown = true;
-      } 
+      }
     } else {
       this.sweetAlert("Please enter a valid book title!");
     }
@@ -60,7 +62,7 @@ export class DialogOverviewExampleDialog {
   }
 
   searchForTheBookInTheDatabase(bookTitle: string): Promise<Book> {
-    
+
     return new Promise<Book>((resolve) => {
       this.http.get("http://localhost:8080/books").subscribe((response: any) => {
         const pages = Array(response['content']);
@@ -68,17 +70,26 @@ export class DialogOverviewExampleDialog {
           for (const book of books) {
             if (book.title.replace(/"/g, '').toLowerCase() == bookTitle.replace(/"/g, '').toLowerCase()) {
               resolve(book);
-              return book; 
+              return book;
             }
           }
         }
 
         this.sweetAlert("The book " + this.data.bookTitle + " has not been found in the library.");
-        
+
       }, (error) => {
         console.error("Error occurred while fetching books:", error);
       });
     });
   }
+
+  publishBookFoundMessage(bookFound: Book) {
+    
+    return this.http.put(`http://localhost:8080/books/${bookFound.id}/loan`, true).subscribe((response: any) => {
+      return response
   
+    })
+  }
 }
+
+
