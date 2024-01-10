@@ -1,0 +1,23 @@
+{
+  "name": "UserCreated",
+  "namespace": "schemas.messaging.avro.events.user.created",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": {
+        "type": "string",
+        "logicalType": "UUID"
+      }
+    },
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "type": "string"
+    }
+  ]
+}
+

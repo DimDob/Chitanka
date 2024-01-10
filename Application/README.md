@@ -21,7 +21,6 @@ Frontend: Angular, typescript, HTML & CSS, javascript
 ## Authors
 
 - [@DimDob](https://www.github.com/DimDob)
-- [@JordanTK](https://www.github.com/JordanTK)
 
 ## Tech Stack
 

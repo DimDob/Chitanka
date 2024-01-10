@@ -13,9 +13,6 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
 
 repositories {
 	mavenCentral()
@@ -51,11 +48,23 @@ dependencies {
 }
 
 
-tasks.register("generateAvro", GenerateAvroJavaTask){
+def generateAvro = tasks.register("generateAvro", GenerateAvroJavaTask) {
 	source("schemas/messaging/avro")
-	outputDir = file("src/main")
+	outputDir = file("./build/generated/avro")
+	outputDir = file("Engine/build/generated/avro")
 }
 
+tasks.named("compileJava").configure {
+	source(generateAvro)
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs += 'Engine/build/generated/avro'
+		}
+	}
+}
 compileJava.dependsOn("generateAvro")
 compileGroovy.dependsOn("generateAvro")
 

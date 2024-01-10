@@ -1,6 +1,7 @@
 package com.example.Chitanka.Service.rabbitMQMessagePublisher;
 
 import com.example.Chitanka.Entity.Book;
+import com.example.Chitanka.Entity.User;
 import com.example.Chitanka.Publisher.PublisherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -52,6 +53,7 @@ public class BooksEventPublisher {
                 .build();
         publisherService.publish(bookDeleted);
     }
+
 
 
 

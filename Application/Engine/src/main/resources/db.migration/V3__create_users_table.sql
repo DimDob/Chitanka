@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS users CASCADE;
+GRANT ALL PRIVILEGES ON DATABASE Chitanka TO postgres;
+
+CREATE TABLE IF NOT EXISTS users (
+    id Long PRIMARY KEY NOT NULL,
+    username TEXT,
+    password TEXT
+);
